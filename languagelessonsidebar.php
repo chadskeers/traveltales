@@ -9,7 +9,6 @@
 ?>
 
 		<div id="primary" class="widget-area" role="complementary">
-			<ul class="xoxo">
 
 <?php
 	/* When we call the dynamic_sidebar() function, it'll spit out
