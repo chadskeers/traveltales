@@ -516,8 +516,22 @@ function twentyten_posted_in() {
 }
 endif;
 
+if (! function_exists( 'is_pagetemplate_active')) {
+	function is_pagetemplate_active($pagetemplate = '') {
+		global $wpdb;
+		$sql = "select meta_key from $wpdb->postmeta where meta_key like '_wp_page_template' and meta_value like '" . $pagetemplate . "'";
+		$result = $wpdb->query($sql);
+		if ($result) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+}
+
 // Include theme options
 include_once('inc/travel-tales-options.php');
 
 // Include custom post types
 include_once('inc/travel-tales-custom-post-types.php');
+	

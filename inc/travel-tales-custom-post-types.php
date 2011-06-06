@@ -49,10 +49,10 @@ if (get_option('travel_tales_language_lessons')) {
 			'singlar_label' => __('Language Lesson'),
 			'public' => true,
 			'show_ui' => true,
-			'capability_type' => 'post',
+			'capability_type' => 'page',
 			'hierarchical' => true,
 			'rewrite' => true,
-			'supports' => array('title', 'editor', 'thumbnail')
+			'supports' => array('title', 'editor', 'thumbnail', 'page-attributes')
 		);
 		if (!get_option('travel_tales_lock_post_types')) {
 			flush_rewrite_rules(false);
