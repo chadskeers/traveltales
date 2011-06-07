@@ -14,10 +14,11 @@ if (get_option('travel_tales_articles')) {
 			'singlar_label' => __('Article'),
 			'public' => true,
 			'show_ui' => true,
+			'menu_position' => 6,
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			'rewrite' => true,
-			'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
+			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments')
 		);
 		if (!get_option('travel_tales_lock_post_types')) {
 			flush_rewrite_rules(false);
@@ -49,10 +50,11 @@ if (get_option('travel_tales_language_lessons')) {
 			'singlar_label' => __('Language Lesson'),
 			'public' => true,
 			'show_ui' => true,
+			'menu_position' => 6,
 			'capability_type' => 'page',
 			'hierarchical' => true,
 			'rewrite' => true,
-			'supports' => array('title', 'editor', 'thumbnail', 'page-attributes')
+			'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'comments')
 		);
 		if (!get_option('travel_tales_lock_post_types')) {
 			flush_rewrite_rules(false);
@@ -85,10 +87,11 @@ if (get_option('travel_tales_recipes')) {
 			'singlar_label' => __('Recipe'),
 			'public' => true,
 			'show_ui' => true,
+			'menu_position' => 6,
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			'rewrite' => true,
-			'supports' => array('title', 'editor', 'thumbnail', 'excerpt')
+			'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments')
 		);
 		if (!get_option('travel_tales_lock_post_types')) {
 			flush_rewrite_rules(false);
