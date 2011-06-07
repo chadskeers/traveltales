@@ -24,7 +24,7 @@ get_header('article'); ?>
 			 * called loop-index.php and that will be used instead.
 			 */
 			query_posts('post_type=article');
-			get_template_part('loop');
+			get_template_part('loop', 'article');
 			?>
 			</div><!-- #content -->
 		</div><!-- #container -->

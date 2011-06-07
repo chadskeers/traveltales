@@ -49,8 +49,14 @@ get_header('article'); ?>
 <?php endif; ?>
 
 					<div class="entry-utility">
-						<?php twentyten_posted_in(); ?>
-						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php if ( count( $topics = get_the_term_list($post->this, 'topic', '', ', ') ) ) : ?>
+							<span class="cat-links">
+								<?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-cat-links', $topics ); ?>
+							</span>
+							<span class="meta-sep">|</span>
+						<?php endif; ?>
+						<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
+						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->
 
