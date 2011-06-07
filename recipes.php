@@ -24,10 +24,10 @@ include_once("recipeheader.php"); ?>
 			 * called loop-index.php and that will be used instead.
 			 */
 			query_posts("post_type=recipe");
-			get_template_part('loop');
+			get_template_part('loop', 'recipe');
 			?>
 			</div><!-- #content -->
 		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('recipe'); ?>
 <?php get_footer(); ?>

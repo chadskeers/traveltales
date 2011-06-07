@@ -151,11 +151,11 @@
 					<span class="meta-sep">|</span>
 				<?php endif; ?>
 				<?php
-					$tags_list = get_the_tag_list( '', ', ' );
-					if ( $tags_list ):
+					$ingredient_list = get_the_term_list( $post->id, 'ingredients', '', ', ' );
+					if ( $ingredient_list ):
 				?>
 					<span class="tag-links">
-						<?php printf( __( '<span class="%1$s">Tagged</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+						<?php printf( __( '<span class="%1$s">Ingredients</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-tag-links', $ingredient_list ); ?>
 					</span>
 					<span class="meta-sep">|</span>
 				<?php endif; ?>

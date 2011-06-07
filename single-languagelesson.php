@@ -8,7 +8,7 @@
  */
 
 
-include_once('languagelessonheader.php'); ?>
+get_header('languagelesson'); ?>
 
 		<div id="container">
 			<div id="content" role="main">
@@ -67,5 +67,5 @@ include_once('languagelessonheader.php'); ?>
 			</div><!-- #content -->
 		</div><!-- #container -->
 
-<?php include("languagelessonsidebar.php"); ?>
+<?php get_sidebar('languagelesson') ?>
 <?php get_footer(); ?>

@@ -7,7 +7,7 @@
  * @since Twenty Ten 1.0
  */
 
-include_once('articleheader.php'); ?>
+get_header('article'); ?>
 
 		<div id="container">
 			<div id="content" role="main">

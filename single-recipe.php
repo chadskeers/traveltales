@@ -50,8 +50,23 @@ include_once('recipeheader.php'); ?>
 <?php endif; ?>
 
 					<div class="entry-utility">
-						<?php twentyten_posted_in(); ?>
-						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="edit-link">', '</span>' ); ?>
+						<?php if ( count( get_the_category() ) ) : ?>
+							<span class="cat-links">
+								<?php printf( __( '<span class="%1$s">Posted in</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
+							</span>
+							<span class="meta-sep">|</span>
+						<?php endif; ?>
+						<?php
+							$ingredient_list = get_the_term_list( $post->id, 'ingredients', '', ', ' );
+							if ( $ingredient_list ):
+						?>
+							<span class="tag-links">
+								<?php printf( __( '<span class="%1$s">Ingredients</span> %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-tag-links', $ingredient_list ); ?>
+							</span>
+							<span class="meta-sep">|</span>
+						<?php endif; ?>
+						<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?></span>
+						<?php edit_post_link( __( 'Edit', 'twentyten' ), '<span class="meta-sep">|</span> <span class="edit-link">', '</span>' ); ?>
 					</div><!-- .entry-utility -->
 				</div><!-- #post-## -->
 
@@ -67,5 +82,5 @@ include_once('recipeheader.php'); ?>
 			</div><!-- #content -->
 		</div><!-- #container -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('recipe'); ?>
 <?php get_footer(); ?>
